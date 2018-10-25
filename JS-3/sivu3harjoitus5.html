@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  var luku = prompt("anna luku: ");
+  var i = 2;
+
+  while(luku > i) {
+    if (luku%i==0) {
+      console.log("luku ei ole alkuluku");
+      break;
+    } else {
+      console.log("luku on alkuluku");
+      break;
+    }
+    i++;
+  }
+  if (luku == 1 || luku == 2) {
+    console.log("luku on alkuluku");
+  }
+
+</script>
+</body>
+</html>

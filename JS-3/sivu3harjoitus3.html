@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<div id="kokeilu"></div>
+<script>
+  'use strict';
+
+  var vuosi1 = prompt("anna aloitusvuosi: ");
+  var vuosi2 = prompt("anna lopetusvuosi: ");
+  var ul = document.createElement("ul");
+
+  while (vuosi2 > vuosi1) {
+    if (vuosi1%100==0) {
+      if (vuosi1%400==0) {
+        var li = document.createElement("li");
+        li.innerHTML = vuosi1;
+        ul.appendChild(li);
+        console.log(vuosi1);
+      }
+    } else if (vuosi1%4==0) {
+      var li = document.createElement("li");
+      li.innerHTML = vuosi1;
+      ul.appendChild(li);
+      console.log(vuosi1);
+    }
+    vuosi1++;
+    document.getElementById("kokeilu").appendChild(ul);
+  }
+</script>
+</body>
+</html>
