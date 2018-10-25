@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  var raha = prompt("anna rahamäärä: ");
+  var hinta = prompt("anna hinta: ");
+  var rahamaara;
+
+  if (raha >= hinta) {
+    rahamaara = +raha-hinta;
+    console.log("Hyvää matkaa!");
+    console.log("jäljelle jäävä rahasumma: "+rahamaara);
+  } else {
+    console.log("jäljelle jäävä rahasumma: "+raha);
+  }
+</script>
+</body>
+</html>

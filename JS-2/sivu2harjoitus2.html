@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  var nimi = prompt("anna nimi: ");
+  var luku = Math.floor(Math.random() * 4)
+
+  if (luku == 0) {
+    console.log(nimi+" olet Rohkelikko");
+  } else if (luku == 1){
+    console.log(nimi+" olet Luihunen");
+  } else if (luku == 2) {
+    console.log(nimi+" olet Puuskupuh");
+  } else {
+    console.log(nimi+" olet Korpinkynsi");
+  }
+</script>
+</body>
+</html>

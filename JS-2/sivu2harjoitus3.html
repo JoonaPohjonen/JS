@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  var sukupuoli= prompt("anna sukupuoli: ");
+  var hemoglobiini = prompt("anna hemoglobiiniarvo (G/L): ");
+
+  if (sukupuoli == "nainen") {
+    if (hemoglobiini > 116 && hemoglobiini < 176) {
+      console.log("hemoglobiini on normaali");
+    } else if (hemoglobiini > 175) {
+      console.log("hemoglobiini on liian suuri");
+    } else if (hemoglobiini < 117) {
+      console.log("hemoglobiini on liian alhainen");
+    }
+  } else if (sukupuoli == "mies") {
+    if (hemoglobiini > 133 && hemoglobiini < 196) {
+      console.log("hemoglobiini on normaali");
+    } else if (hemoglobiini > 195) {
+      console.log("hemoglobiini on liian suuri");
+    } else if (hemoglobiini < 134) {
+      console.log("hemoglobiini on liian alhainen");
+    }
+  }
+</script>
+</body>
+</html>

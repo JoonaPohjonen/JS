@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  var luku = prompt("anna vuosiluku: ");
+  if (luku%100==0) {
+    if (luku%400==0) {
+      console.log("vuosi on karkausvuosi");
+    } else {
+      console.log("vuosi ei ole karkausvuosi");
+    }
+  } else if (luku%4==0) {
+    console.log("vuosi on karkausvuosi");
+  } else {
+    console.log("vuosi ei ole karkausvuosi");
+  }
+</script>
+</body>
+</html>
