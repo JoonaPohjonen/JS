@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  var leipä = prompt("anna ensin leiviskät: ");
+  var naula = prompt("anna naulat: ");
+  var luodit = prompt("anna luodit: ");
+
+  leipä = +leipä*8512;
+  naula = +naula*425.6;
+  luodit = +luodit*13.3;
+
+  var summa = leipä+naula+luodit;
+  var kg = Number.parseFloat(summa).toFixed(0);
+  var gramma = +summa-kg;
+  var gg = Number.parseFloat(gramma).toFixed(1);
+  var gg2 = +gg*10;
+
+  console.log("Massa nykymittojen mukaan: "+kg+" kilogrammaa ja "+gg2+" grammaa.");
+
+</script>
+</body>
+</html>
