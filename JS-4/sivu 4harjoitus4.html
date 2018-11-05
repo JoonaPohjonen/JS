@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+  let taulukko = [];
+  let i = 1;
+  let p;
+  let u;
+
+  do {
+    taulukko [i] = prompt("anna luku: ");
+    if (taulukko [i] == 0) {
+      break;
+    }
+    i++;
+  } while (taulukko[i] !== 0);
+
+  taulukko.sort().reverse();
+  u = taulukko.length;
+
+  for (i = 1; i < u; i++) {
+    console.log(taulukko[i]);
+  }
+</script>
+</body>
+</html>

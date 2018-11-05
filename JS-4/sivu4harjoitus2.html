@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<div id="kokeilu"></div>
+<script>
+  'use strict';
+
+  let osallistujat = prompt("anna osallistujien määrä: ");
+  let nimet = [];
+  let i;
+  let p;
+  let nimi;
+  let ol = document.createElement("ol");
+
+  for (i = 1; osallistujat >= i; i++) {
+    nimi = prompt("anna osallistujan "+i+"nimi: ");
+    nimet[i] = nimi;
+  }
+
+  for (p = 1; i > p; p++) {
+    let li = document.createElement("li");
+    li.innerHTML = nimet[p];
+    ol.appendChild(li);
+    document.getElementById("kokeilu").appendChild(ol);
+  }
+
+</script>
+</body>
+</html>
