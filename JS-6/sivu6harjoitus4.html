@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  function suurin(yksi, kaksi, kolme) {
+    var isoin = Math.max(yksi, kaksi, kolme);
+    return isoin;
+  }
+
+  var luku1 = prompt("anna ensimmäinen luku: ");
+  var luku2 = prompt("anna toinen luku: ");
+  var luku3 = prompt("anna kolmas luku: ");
+
+  var tulos = suurin(luku1, luku2, luku3);
+  console.log(tulos);
+</script>
+</body>
+</html>

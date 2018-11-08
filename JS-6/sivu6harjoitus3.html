@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  function itseisarvo(luku) {
+    var arvo;
+    if(luku < 0) {
+      arvo = luku*(-1);
+    } else {
+      arvo = luku;
+    }
+    return arvo;
+  }
+
+  var maara = prompt("anna jokin luku: ");
+  var tulos = itseisarvo(maara);
+  console.log(tulos);
+</script>
+</body>
+</html>
