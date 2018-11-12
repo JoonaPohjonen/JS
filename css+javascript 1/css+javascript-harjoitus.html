@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li data-foodtype="squishy">Orange</li>
+        <li>Pear</li>
+        <li>Kiwi</li>
+        <li id="berry">Strawberry</li>
+    </ul>
+
+    <script>
+        'use strict';
+
+        var buri = document.getElementById('berry');
+        console.log(buri);
+        var beri = document.getElementById('berry').innerHTML;
+        console.log("i found the berry: "+beri);
+
+        buri.style.backgroundColor = 'red';
+
+        var orang = document.querySelector('[data-foodtype="squishy"]');
+        console.log(orang);
+        var oring = document.querySelector('[data-foodtype="squishy"]').innerHTML;
+        console.log("i found the fruit: "+oring);
+
+        orang.style.backgroundColor = 'orange';
+
+        var elem = document.getElementsByTagName('li');
+        console.log(elem);
+
+        console.log('using the loop here:');
+        var i;
+        for (i = 0; i < elem.length; i++) {
+          console.log(elem[i].innerHTML);
+          if (elem[i].innerHTML == 'Pear') {
+            elem[i].style.backgroundColor = 'green';
+          }
+          elem[i].style.width = '100px';
+        }
+
+        var uli = document.querySelector('.fruits');
+        uli.style.listStyleType = 'none';
+
+        var sele = document.querySelectorAll('li');
+        console.log(sele);
+
+        var kaikki = document.querySelectorAll('li');
+        kaikki.forEach(function(element) {
+          console.log(element.innerHTML);
+          element.style.border = 'solid black';
+        });
+    </script>
+</body>
+</html>
