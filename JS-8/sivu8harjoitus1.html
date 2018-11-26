@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+
+<div id="lul"></div>
+<div id="lil"></div>
+<div id="lel"></div>
+<div id="lal"></div>
+
+<img>
+
+<input id="hakuteksti" type="text">
+<button type="button" onClick="tekee()" id="hakunappi">Hae</button>
+
+<script>
+  'use strict';
+
+
+  function tekee() {
+
+    var arvo = document.getElementById("hakuteksti").value;
+
+    let xhr = new XMLHttpRequest;
+    xhr.open('GET', 'http://api.tvmaze.com/singlesearch/shows?q='+arvo, true)
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && this.status === 200) {
+        var vastaus = JSON.parse(this.responseText);
+        console.log(JSON.parse(this.responseText));
+        console.log(vastaus.length);
+
+        var i;
+
+          for (i = 0; i < 3; i++) {
+            var z = document.createElement('p');
+            if (i === 0) {
+              z.innerHTML = vastaus.name;
+            } else if (i === 1) {
+              z.innerHTML = vastaus.url;
+            } else {
+              z.innerHTML = vastaus.summary;
+            }
+            document.body.appendChild(z);
+          }
+          var ima = document.createElement('img');
+          ima.src = vastaus.image.medium;
+          document.body.appendChild(ima);
+
+      }
+    }
+
+    xhr.send();
+  }
+</script>
+</body>
+</html>
