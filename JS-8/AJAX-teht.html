@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript-kokeilu</title>
+</head>
+<body>
+
+<div id="lul"></div>
+<div id="lil"></div>
+<div id="lel"></div>
+<div id="lal"></div>
+
+<img>
+
+<input id="hakuteksti" type="text">
+<button type="button" onClick="tekee()" id="hakunappi">Hae</button>
+
+<script>
+  'use strict';
+
+
+  function tekee() {
+
+    var arvo = document.getElementById("hakuteksti").value;
+
+    let myRequest = new XMLHttpRequest;
+    myRequest.open('GET', 'http://api.tvmaze.com/search/shows?q='+arvo, true)
+    myRequest.onreadystatechange = function() {
+      if (myRequest.readyState === 4 && this.status === 200) {
+        var vastaus = JSON.parse(myRequest.responseText);
+        console.log(JSON.parse(myRequest.responseText));
+        console.log(vastaus.length);
+        console.log(vastaus[0]);
+
+        var i;
+        var u;
+
+        for (u = 0; u < 10; u++) {
+          var oikea = vastaus[u];
+          for (i = 0; i < 4; i++) {
+            var z = document.createElement('p');
+            if (i === 0) {
+              try {
+                z.innerHTML = Object.values(oikea)[1].name;
+              }
+              catch(err) {
+                z.innerHTML = 'ei nimea';
+              }
+            } else if (i === 1) {
+              try {
+                z.innerHTML = Object.values(oikea)[1].url;
+              }
+              catch(err) {
+                z.innerHTML = 'ei linkkia';
+              }
+            } else if (i === 2) {
+              try {
+                z.innerHTML = Object.values(oikea)[1].summary;
+              }
+              catch(err) {
+                z.innerHTML = 'ei lyhennelmaa';
+              }
+            } else {
+              try {
+                z.innerHTML = Object.values(oikea)[1].genres;
+              }
+              catch (err) {
+                z.innerHTML = 'ei genreja';
+              }
+            }
+            document.body.appendChild(z);
+          }
+          try {
+            var ima = document.createElement('img');
+            ima.src = Object.values(oikea)[1].image.medium;
+            document.body.appendChild(ima);
+          }
+          catch(err) {
+            console.log('ei kuvaa');
+          }
+        }
+      }
+    }
+
+    myRequest.send();
+  }
+</script>
+</body>
+</html>
