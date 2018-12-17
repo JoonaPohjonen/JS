@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="tyyli.css">
+    <title>Title</title>
+</head>
+<body onload="tarkista()">
+
+<div class="navbar">
+    <a class="toiset muut">Home</a>
+    <div class="dropdown" id="kokeilu">
+        <button class="dropbtn" onclick="myFunction()">Lataa tiedosto
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+            <a><form id="myForm" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="tiedosto">
+                <input type="text" name="title" id="tiedostonimi">
+                <input type="submit" value="paina minua">
+            </form></a>
+        </div>
+    </div>
+    <a href="otherprofile.html" class="right yksin" id="otherprofile">News</a>
+    <a class="right" id="lili"><button class="ylanappi" id="onon" onclick="document.getElementById('id01').style.display='block'">Login</button></a></li>
+</div>
+<br>
+
+<!-- Button to open the modal login form -->
+
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+
+    <!-- Modal Content -->
+    <div class="modal-content animate">
+
+        <div class="container">
+            Username:<br>
+            <input id="loggaa" type="text">
+            <br>
+            <br>
+            Password:<br>
+            <input id="salasana" type="text">
+            <br>
+            <br>
+
+            <button class="erilainen" onClick="loggain()">Login</button>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div id="kirjautumisformi">
+    <h2>Luo kayttaja</h2>
+<br>
+<input type="text" id="sissoo">
+<br>
+<input type="password" id="password">
+<br>
+<input type="text" id="email">
+<br>
+<button type="button" onClick="sisaan()" id="sisanappi">Luo käyttäjä</button>
+<br>
+</div>
+<br>
+<br>
+
+<div id="viimkaksi">
+<h2>Viimeiset 20 ladattua tiedostoa</h2>
+</div>
+<br>
+<br>
+
+<iframe id="my_iframe" style="display:none;"></iframe>
+<iframe id="your_iframe" style="display:none;"></iframe>
+<script src="main.js"></script>
+
+</body>
+</html>
